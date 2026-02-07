@@ -21,15 +21,15 @@ const PasswordSchema = Yup.object().shape({
 });
 
 export default function App() {
-  const [password, setPassword] = useState('');
-  const [isPassGenerated, setIsPassGenerated] = useState(false);
-  const [lowercase, setLowercase] = useState(true);
-  const [uppercase, setUppercase] = useState(false);
-  const [numbers, setNumbers] = useState(false);
-  const [symbols, setSymbols] = useState(false);
+  const [password, setPassword] = useState(''); // state to hold the generated password
+  const [isPassGenerated, setIsPassGenerated] = useState(false); // state to track if password is generated or not
+  const [lowercase, setLowercase] = useState(true); // state to track if lowercase characters should be included
+  const [uppercase, setUppercase] = useState(false); // state to track if uppercase characters should be included
+  const [numbers, setNumbers] = useState(false); // state to track if numbers should be included
+  const [symbols, setSymbols] = useState(false); // state to track if symbols should be included
 
   const generatePasswordString = (passwordLength: number) => {
-    let characterList = '';
+    let characterList = ''; // variable to hold the list of characters to generate password from
 
     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -187,94 +187,117 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
+    backgroundColor: '#F4F6FA',
   },
+
   formContainer: {
-    margin: 8,
-    padding: 8,
+    margin: 16,
+    padding: 20,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
   },
+
   title: {
-    fontSize: 32,
-    fontWeight: '600',
-    marginBottom: 15,
+    fontSize: 28,
+    fontWeight: '700',
+    marginBottom: 20,
+    textAlign: 'center',
+    color: '#1E293B',
   },
-  subTitle: {
-    fontSize: 26,
-    fontWeight: '600',
-    marginBottom: 2,
-  },
-  description: {
-    color: '#758283',
-    marginBottom: 8,
-  },
+
   heading: {
     fontSize: 15,
+    fontWeight: '500',
+    color: '#334155',
   },
+
   inputWrapper: {
-    marginBottom: 15,
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    marginBottom: 18,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
+
   inputColumn: {
     flexDirection: 'column',
   },
+
   inputStyle: {
-    padding: 8,
-    width: '30%',
+    padding: 10,
+    width: 70,
     borderWidth: 1,
-    borderRadius: 4,
-    borderColor: '#16213e',
+    borderRadius: 10,
+    borderColor: '#CBD5E1',
+    backgroundColor: '#F8FAFC',
+    textAlign: 'center',
   },
+
   errorText: {
     fontSize: 12,
-    color: '#ff0d10',
+    color: '#EF4444',
   },
+
   formActions: {
+    marginTop: 10,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
+
   primaryBtn: {
-    width: 120,
-    padding: 10,
-    borderRadius: 8,
-    marginHorizontal: 8,
-    backgroundColor: '#5DA3FA',
+    flex: 1,
+    padding: 12,
+    borderRadius: 12,
+    backgroundColor: '#2563EB',
+    marginRight: 8,
   },
+
   primaryBtnTxt: {
     color: '#fff',
     textAlign: 'center',
-    fontWeight: '700',
+    fontWeight: '600',
+    fontSize: 16,
   },
+
   secondaryBtn: {
-    width: 120,
-    padding: 10,
-    borderRadius: 8,
-    marginHorizontal: 8,
-    backgroundColor: '#CAD5E2',
+    flex: 1,
+    padding: 12,
+    borderRadius: 12,
+    backgroundColor: '#E2E8F0',
+    marginLeft: 8,
   },
+
   secondaryBtnTxt: {
     textAlign: 'center',
+    fontWeight: '600',
+    fontSize: 16,
+    color: '#334155',
   },
+
   card: {
-    padding: 12,
-    borderRadius: 6,
-    marginHorizontal: 12,
+    marginHorizontal: 16,
+    marginTop: 20,
   },
+
   cardElevated: {
-    backgroundColor: '#ffffff',
-    elevation: 1,
-    shadowOffset: {
-      width: 1,
-      height: 1,
-    },
-    shadowColor: '#333',
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
+    padding: 20,
+    borderRadius: 16,
+    backgroundColor: '#FFFFFF',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    alignItems: 'center',
   },
+
   generatedPassword: {
-    fontSize: 22,
-    textAlign: 'center',
-    marginBottom: 12,
-    color: '#000',
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: 1.5,
+    color: '#0F172A',
   },
 });
+
